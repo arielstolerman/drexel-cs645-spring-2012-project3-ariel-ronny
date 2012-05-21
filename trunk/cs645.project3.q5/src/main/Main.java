@@ -74,7 +74,7 @@ public class Main {
 		*/
 	}
 	
-	public static String word = " ";
+	public static String word = "hello ";
 
 	public static boolean readable(char c)
 	{
