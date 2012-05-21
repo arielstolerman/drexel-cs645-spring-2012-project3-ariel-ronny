@@ -52,14 +52,14 @@ public class Main {
 		// 0, 3
 		// 1, 5
 		// 2, 4
-		i = 0;
-		j = 3;
+		i = 1;
+		j = 5;
 		x = xor(bytes[i],bytes[j]);
 		log.println("> CT " + i + " xor " + j + ":");
 		log.println("-------------");
 
 		Map<Integer,String> fixed = new HashMap<Integer, String>();
-		//fixed.put(0,"");
+		//fixed.put(41," of them live ");
 
 		log.println("XOR results with the word '" + word + "':");
 		xorWithWord(x, word, fixed);
@@ -67,14 +67,14 @@ public class Main {
 		log.println();
 		
 		/*
-		String s = "SET THIS TO ONE OF THE PLAINTEXTS";
+		String s = "";
 		byte[] b = s.getBytes();
 		log.println(toShortAsciiString(b));
 		log.println(toShortAsciiString(xor(x,b)));
 		*/
 	}
 	
-	public static String word = "I may take a holiday in Spain";
+	public static String word = " ";
 
 	public static boolean readable(char c)
 	{
