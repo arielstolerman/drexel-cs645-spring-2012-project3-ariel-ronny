@@ -13,7 +13,10 @@ public class Main {
 	 */
 	public static void main(String[] args) throws Exception
 	{		
-		log = new MultiplePrintStream(System.out, new PrintStream(new File(Utils.getLogPath())));
+		log = new MultiplePrintStream(System.out,
+				new PrintStream(new File(
+						word.replaceAll("[^\\w']", "_") + "_" + Utils.getLogPath()
+						)));
 		
 		// read files and convert to byte arrays
 		String[] contents = readFiles(Constants.CT);
@@ -54,7 +57,6 @@ public class Main {
 		log.println("> CT " + i + " xor " + j + ":");
 		log.println("-------------");
 
-		String word = "I may take a holiday in Spain";
 		Map<Integer,String> fixed = new HashMap<Integer, String>();
 		//fixed.put(0,"");
 
@@ -70,6 +72,8 @@ public class Main {
 		log.println(toShortAsciiString(xor(x,b)));
 		*/
 	}
+	
+	public static String word = "I may take a holiday in Spain";
 
 	public static boolean readable(char c)
 	{
@@ -115,7 +119,13 @@ public class Main {
 	 */
 	public static String[] readFiles(String dirPath) throws IOException
 	{
-		File[] files = new File(dirPath).listFiles();
+		File[] files = new File(dirPath).listFiles(new FilenameFilter() {
+			
+			@Override
+			public boolean accept(File arg0, String arg1) {
+				return !arg1.startsWith(".");
+			}
+		});
 		String[] contents = new String[files.length];
 		for (int i = 0; i < files.length; i++)
 		{
