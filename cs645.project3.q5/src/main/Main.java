@@ -59,22 +59,24 @@ public class Main {
 		log.println("-------------");
 
 		Map<Integer,String> fixed = new HashMap<Integer, String>();
-		//fixed.put(41," of them live ");
+		//101: _we_have_a_ -> s_an_even_e
+		//81: de_the_c -> _before_
+		//37: and_may_a_fa -> _behind_the_
 
 		log.println("XOR results with the word '" + word + "':");
-		xorWithWord(x, word, fixed);
+		//xorWithWord(x, word, fixed);
 		log.println();
 		log.println();
 		
-		/*
-		String s = "";
+		
+		String s = "Welcome! Welcome! Happy Hunger Games and may the odds be ever in your favor! Now, before we begin, we have a very special film...";
 		byte[] b = s.getBytes();
 		log.println(toShortAsciiString(b));
 		log.println(toShortAsciiString(xor(x,b)));
-		*/
+		
 	}
 	
-	public static String word = "hello ";
+	public static String word = "Welcome! ";
 
 	public static boolean readable(char c)
 	{
@@ -357,9 +359,9 @@ public class Main {
 			log.println("> ARR: " + toAsciiString(a));
 			log.println("> WRD: " + toAsciiString(w));
 			log.println("> XOR: " + toAsciiString(res[i]));
-			log.println("> ARR (bits):\n" + toBitString(a));
-			log.println("> WRD (bits):\n" + toBitString(w));
-			log.println("> XOR (bits):\n" + toBitString(res[i]));
+			//log.println("> ARR (bits):\n" + toBitString(a));
+			//log.println("> WRD (bits):\n" + toBitString(w));
+			//log.println("> XOR (bits):\n" + toBitString(res[i]));
 			log.println();
 
 			// advance leading zeros
